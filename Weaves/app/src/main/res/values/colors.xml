@@ -389,4 +389,9 @@
     <color name="material_deep_orange_700">#ffc53929</color>
     <color name="material_deep_orange_A200">#ffff5252</color>
     <color name="material_deep_orange_A400">#ffff1744</color><!-- Neutral colors -->
+    <color name="slide_1">#4f91ff</color>
+    <color name="slide_2">#fb9c25</color>
+    <color name="slide_3">#5ab55d</color>
+    <color name="slide_4">#ea2d6d</color>
+    <color name="tutorial_buttonTextColor">#000000</color>
 </resources>

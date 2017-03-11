@@ -5,11 +5,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.edu.weaves.core.SessionManager;
+import com.edu.weaves.core.SharedManager;
+
 public abstract class ParentActivity extends AppCompatActivity {
+    public SessionManager session;
+    public SharedManager manager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResourceId());
+        session = new SessionManager(this);
+        manager = new SharedManager();
     }
 
     protected abstract int getLayoutResourceId();

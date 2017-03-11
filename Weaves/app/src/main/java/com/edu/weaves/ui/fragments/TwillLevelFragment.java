@@ -1,11 +1,10 @@
 package com.edu.weaves.ui.fragments;
 
-
 import android.support.v4.app.Fragment;
 
-/**
- * Created by wakeel on 11/03/17.
- */
+import com.edu.weaves.ui.activities.TwillActivity;
 
 public class TwillLevelFragment extends Fragment {
+    TwillActivity activity;
+
 }

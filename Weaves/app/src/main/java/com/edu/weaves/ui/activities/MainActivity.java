@@ -68,8 +68,17 @@ public class MainActivity extends ParentActivity {
         } else if (id == R.id.action_login) {
 
             return true;
+        } else if (id == R.id.action_rate) {
+
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

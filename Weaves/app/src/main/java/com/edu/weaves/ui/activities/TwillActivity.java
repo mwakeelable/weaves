@@ -6,9 +6,6 @@ import android.support.v7.widget.Toolbar;
 
 import com.edu.weaves.R;
 
-/**
- * Created by wakeel on 11/03/17.
- */
 
 public class TwillActivity extends ParentActivity {
     @Override

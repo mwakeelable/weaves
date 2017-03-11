@@ -4,16 +4,43 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.edu.weaves.R;
 
 public class MainActivity extends ParentActivity {
+    Button btn_plain, btn_twill, btn_invent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        btn_plain = (Button) findViewById(R.id.btn_plain);
+        btn_twill = (Button) findViewById(R.id.btn_twill);
+        btn_invent = (Button) findViewById(R.id.btn_invent);
+
+        btn_plain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(PlainActivity.class);
+            }
+        });
+
+        btn_twill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(TwillActivity.class);
+            }
+        });
+
+        btn_invent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(InventActivity.class);
+            }
+        });
     }
 
     @Override

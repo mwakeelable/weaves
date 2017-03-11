@@ -12,7 +12,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.edu.weaves.UI.Activities.InventActivity"
+    tools:context="com.edu.weaves.ui.activities.InventActivity"
     tools:showIn="@layout/invent_activity">
 
     <TextView

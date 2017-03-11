@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.edu.weaves.UI.Activities.InventActivity">
+    tools:context="com.edu.weaves.ui.activities.InventActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

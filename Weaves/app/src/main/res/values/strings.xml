@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Weaves</string>
     <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="action_account">Account</string>
     <string name="show_all_content">Show all content</string>
     <string name="one_line_text">One line text</string>
     <string name="txt_plain_activity">Plain Weave</string>

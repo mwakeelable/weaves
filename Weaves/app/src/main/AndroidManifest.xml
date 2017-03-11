@@ -3,15 +3,16 @@
     package="com.edu.weaves">
 
     <application
-        android:name=".Core.AppController"
+        android:name=".core.AppController"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".UI.Activities.SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -23,40 +24,81 @@
         </activity>
 
         <activity
-            android:name=".UI.Activities.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".UI.Activities.PlainActivity"
+            android:name=".ui.activities.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.Activities.MainActivity" />
+                android:value=".ui.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name=".UI.Activities.TwillActivity"
+            android:name=".ui.activities.SettingsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.Activities.MainActivity" />
+                android:value=".ui.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name=".UI.Activities.InventActivity"
+            android:name=".ui.activities.PlainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UI.Activities.MainActivity" />
+                android:value=".ui.activities.MainActivity" />
         </activity>
+
+        <activity
+            android:name=".ui.activities.PlainLevelsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.PlainActivity" />
+        </activity>
+
+        <activity
+            android:name=".ui.activities.TwillActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".ui.activities.TwillLevelsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.TwillActivity" />
+        </activity>
+
+        <activity
+            android:name=".ui.activities.InventActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.MainActivity" />
+        </activity>
+        
     </application>
 
 </manifest>

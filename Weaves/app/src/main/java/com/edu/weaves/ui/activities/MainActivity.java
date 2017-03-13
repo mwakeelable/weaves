@@ -20,7 +20,6 @@ public class MainActivity extends ParentActivity {
         btn_plain = (Button) findViewById(R.id.btn_plain);
         btn_twill = (Button) findViewById(R.id.btn_twill);
         btn_invent = (Button) findViewById(R.id.btn_invent);
-
         btn_plain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,30 +49,30 @@ public class MainActivity extends ParentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        if (session.isLoggedIn()) {
+            menu.getItem(0).setVisible(false);
+            menu.getItem(1).setVisible(true);
+            menu.getItem(1).setTitle(db.getUser(1).getName());
+        } else {
+            menu.getItem(0).setVisible(true);
+            menu.getItem(1).setVisible(false);
+        }
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.action_login) {
-
-            return true;
-        } else if (id == R.id.action_rate) {
-
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_register:
+                openActivity(RegisterActivity.class);
+                return true;
+            case R.id.action_account:
+                openActivity(AccountActivity.class);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

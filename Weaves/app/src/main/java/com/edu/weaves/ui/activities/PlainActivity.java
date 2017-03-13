@@ -1,10 +1,13 @@
 package com.edu.weaves.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.edu.weaves.R;
 
@@ -16,8 +19,13 @@ public class PlainActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getResources().getString(R.string.txt_plain_activity));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ImageView btn_back = (ImageView) findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         btn_level1 = (LinearLayout) findViewById(R.id.plain_one);
         btn_level2 = (LinearLayout) findViewById(R.id.plain_two);
         btn_level3 = (LinearLayout) findViewById(R.id.plain_three);
@@ -30,7 +38,65 @@ public class PlainActivity extends ParentActivity {
         btn_level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity(PlainLevelsActivity.class);
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 1);
+                startActivity(intent);
+            }
+        });
+        btn_level2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 2);
+                startActivity(intent);
+            }
+        });
+        btn_level3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 3);
+                startActivity(intent);
+            }
+        });
+        btn_level4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 4);
+                startActivity(intent);
+            }
+        });
+        btn_level5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 5);
+                startActivity(intent);
+            }
+        });
+        btn_level6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 6);
+                startActivity(intent);
+            }
+        });
+        btn_level7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 7);
+                startActivity(intent);
+            }
+        });
+        btn_level8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PlainActivity.this, PlainLevelsActivity.class);
+                intent.putExtra("level", 8);
+                startActivity(intent);
             }
         });
     }

@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.edu.weaves.core.SessionManager;
 import com.edu.weaves.core.SharedManager;
+import com.edu.weaves.database.DatabaseHandle;
 
 public abstract class ParentActivity extends AppCompatActivity {
     public SessionManager session;
     public SharedManager manager;
+    DatabaseHandle db = new DatabaseHandle(this);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

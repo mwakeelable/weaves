@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.edu.weaves.ui.activities.InventActivity">
+    tools:context="com.edu.weaves.ui.activities.AccountActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
                     android:id="@+id/btn_back"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_arrow_back_white_24dp" />
@@ -37,7 +38,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="12dp"
                     android:layout_toEndOf="@id/btn_back"
-                    android:text="@string/txt_invent_activity"
+                    android:text="@string/txt_account_activity"
                     android:textColor="@color/White"
                     android:textSize="20sp" />
 
@@ -47,6 +48,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/invent_content" />
+    <include layout="@layout/account_content" />
 
 </android.support.design.widget.CoordinatorLayout>

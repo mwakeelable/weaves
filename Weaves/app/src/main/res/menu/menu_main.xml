@@ -4,18 +4,19 @@
     tools:context="com.edu.weaves.ui.activities.MainActivity">
 
     <item
-        android:id="@+id/action_login"
+        android:id="@+id/action_register"
         android:orderInCategory="100"
-        android:title="@string/action_login"
-        app:showAsAction="never" />
+        android:title="@string/action_register"
+        app:showAsAction="always" />
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_settings"-->
+        <!--app:showAsAction="never" />-->
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_account"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_rate"
-        android:orderInCategory="100"
-        android:title="Rate App"
-        app:showAsAction="never"/>
+        android:title="@string/txt_account_activity"
+        app:showAsAction="always"
+        android:visible="false"/>
 </menu>

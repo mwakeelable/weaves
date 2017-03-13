@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.edu.weaves.ui.activities.InventActivity">
+    tools:context="com.edu.weaves.ui.activities.RegisterActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="12dp"
                     android:layout_toEndOf="@id/btn_back"
-                    android:text="@string/txt_invent_activity"
+                    android:text="@string/txt_register_activity"
                     android:textColor="@color/White"
                     android:textSize="20sp" />
 
@@ -47,6 +47,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/invent_content" />
+    <include layout="@layout/register_content" />
 
 </android.support.design.widget.CoordinatorLayout>

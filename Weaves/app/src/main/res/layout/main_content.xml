@@ -26,21 +26,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="PLAIN WEAVE" />
+        android:text="PLAIN WEAVE"
+        android:background="@drawable/register_btn"
+        android:textColor="@color/White"/>
 
     <Button
         android:id="@+id/btn_twill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="TWILL WEAVE" />
+        android:text="TWILL WEAVE"
+        android:background="@drawable/register_btn"
+        android:textColor="@color/White"/>
 
     <Button
         android:id="@+id/btn_invent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="INVENT WEAVE" />
+        android:text="INVENT WEAVE"
+        android:background="@drawable/register_btn"
+        android:textColor="@color/White"/>
 
 
 </LinearLayout>

@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import com.edu.weaves.R;
 
-public class InventActivity extends ParentActivity {
+public class AccountActivity extends ParentActivity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +23,16 @@ public class InventActivity extends ParentActivity {
                 onBackPressed();
             }
         });
+        TextView txt_name = (TextView) findViewById(R.id.txt_user_name);
+        TextView txt_age = (TextView) findViewById(R.id.txt_user_age);
+        TextView txt_score = (TextView) findViewById(R.id.txt_user_score);
+        txt_name.setText(db.getUser(1).getName());
+        txt_age.setText(String.valueOf(db.getUser(1).getAge()));
+        txt_score.setText(String.valueOf(db.getUser(1).getScore()));
     }
+
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.invent_activity;
+        return R.layout.account_activity;
     }
 }

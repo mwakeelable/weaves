@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.edu.weaves.ui.activities.PlainLevelsActivity">
+    tools:context="com.edu.weaves.ui.activities.TwillLevelsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -38,17 +38,17 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="12dp"
                     android:layout_toEndOf="@id/btn_back"
-                    android:text="@string/txt_plain_levels_activity"
+                    android:text="@string/txt_twill_levels_activity"
                     android:textColor="@color/White"
                     android:textSize="20sp" />
 
                 <Button
-                android:id="@+id/bnt_show_tutorial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="8dp" />
+                    android:id="@+id/bnt_show_tutorial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="8dp" />
 
             </RelativeLayout>
 
@@ -56,10 +56,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/plain_levels_content" />
+    <include layout="@layout/twill_levels_content" />
 
     <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/btn_plain_options"
+        android:id="@+id/btn_twill_options"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
@@ -82,7 +82,7 @@
         app:menu_shadowColor="@color/colorPrimaryDark">
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/btn_plain_color"
+            android:id="@+id/btn_twill_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_dialog_info"
@@ -98,7 +98,7 @@
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/btn_plain_fabric"
+            android:id="@+id/btn_twill_fabric"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_dialog_info"

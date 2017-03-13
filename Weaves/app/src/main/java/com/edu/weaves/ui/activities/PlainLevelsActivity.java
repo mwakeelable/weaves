@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.edu.weaves.R;
 import com.github.clans.fab.FloatingActionButton;
@@ -21,21 +24,36 @@ public class PlainLevelsActivity extends ParentActivity {
     private static final int REQUEST_CODE = 1234;
     public FloatingActionMenu btn_plain_options;
     public FloatingActionButton btn_change_color, btn_change_fabric;
+    int level = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Button buttonViewTutorial = (Button) findViewById(R.id.buttonViewTutorial);
-        buttonViewTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadTutorial();
-            }
-        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        Intent in = getIntent();
+        Bundle extra = in.getExtras();
+        if (extra != null) {
+            level = extra.getInt("level");
+        }
         btn_plain_options = (FloatingActionMenu) findViewById(R.id.btn_plain_options);
         btn_change_color = (FloatingActionButton) findViewById(R.id.btn_plain_color);
         btn_change_fabric = (FloatingActionButton) findViewById(R.id.btn_plain_fabric);
-
+        Button btn_show_tutorial = (Button) findViewById(R.id.bnt_show_tutorial);
+        btn_show_tutorial.setText("Level " + level + " Tutorial");
+        btn_show_tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadTutorial(level);
+            }
+        });
+        ImageView btn_back = (ImageView) findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -43,14 +61,13 @@ public class PlainLevelsActivity extends ParentActivity {
         return R.layout.plain_levels_activity;
     }
 
-    public void loadTutorial() {
+    public void loadTutorial(int level) {
         Intent mainAct = new Intent(this, MaterialTutorialActivity.class);
-        mainAct.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS, getTutorialItems(this));
+        mainAct.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS, getLevelTutorial(level, this));
         startActivityForResult(mainAct, REQUEST_CODE);
-
     }
 
-    private ArrayList<TutorialItem> getTutorialItems(Context context) {
+    private ArrayList<TutorialItem> getLevelTutorial(int level, Context context) {
         TutorialItem tutorialItem1 = new TutorialItem(R.string.slide_1_african_story_books, R.string.slide_1_african_story_books,
                 R.color.slide_1, R.drawable.tut_page_1_front, R.drawable.tut_page_1_background);
 

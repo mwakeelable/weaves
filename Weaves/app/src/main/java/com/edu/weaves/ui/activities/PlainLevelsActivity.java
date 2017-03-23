@@ -1,17 +1,22 @@
 package com.edu.weaves.ui.activities;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.edu.weaves.R;
+import com.edu.weaves.ui.fragments.PlainLevelFragment;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -24,7 +29,9 @@ public class PlainLevelsActivity extends ParentActivity {
     private static final int REQUEST_CODE = 1234;
     public FloatingActionMenu btn_plain_options;
     public FloatingActionButton btn_change_color, btn_change_fabric;
-    int level = 0;
+    public int level = 0;
+    Spinner plain_levels;
+    PlainLevelFragment FRAGMENT_PLAIN_LEVELS;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +61,9 @@ public class PlainLevelsActivity extends ParentActivity {
                 onBackPressed();
             }
         });
+        FRAGMENT_PLAIN_LEVELS = new PlainLevelFragment();
+        drawFragment(FRAGMENT_PLAIN_LEVELS);
+        plain_levels = (Spinner) findViewById(R.id.cbo_plain_levels);
     }
 
     @Override
@@ -111,6 +121,14 @@ public class PlainLevelsActivity extends ParentActivity {
         if (btn_plain_options.isOpened())
             btn_plain_options.close(true);
         else
-            super.onBackPressed();
+            finish();
+        super.onBackPressed();
+    }
+
+    private void drawFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.plain_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

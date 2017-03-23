@@ -4,14 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.edu.weaves.R;
+import com.edu.weaves.ui.fragments.TwillLevelFragment;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -26,7 +31,9 @@ public class TwillLevelsActivity extends ParentActivity {
     private static final int REQUEST_CODE = 1234;
     public FloatingActionMenu btn_twill_options;
     public FloatingActionButton btn_change_color, btn_change_fabric;
-    int level = 0;
+    public int level = 0;
+    Spinner twill_levels;
+    TwillLevelFragment FRAGMENT_TWILL_LEVELS;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +63,9 @@ public class TwillLevelsActivity extends ParentActivity {
                 onBackPressed();
             }
         });
+        FRAGMENT_TWILL_LEVELS = new TwillLevelFragment();
+        drawFragment(FRAGMENT_TWILL_LEVELS);
+        twill_levels = (Spinner) findViewById(R.id.cbo_twill_levels);
     }
 
     @Override
@@ -110,6 +120,14 @@ public class TwillLevelsActivity extends ParentActivity {
         if (btn_twill_options.isOpened())
             btn_twill_options.close(true);
         else
+            finish();
             super.onBackPressed();
+    }
+
+    private void drawFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.twill_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
